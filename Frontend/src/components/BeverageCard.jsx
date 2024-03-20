@@ -1,6 +1,13 @@
 import React from "react";
+import { useCart } from "../hooks/useCart";
 
 const BeverageCard = ({ beverage }) => {
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart(beverage);
+  };
+
   return (
     <div className="bg-white shadow-md rounded-lg p-4 m-2">
       <div className="flex justify-center mb-5">
@@ -14,7 +21,10 @@ const BeverageCard = ({ beverage }) => {
       <p className="text-gray-500">{beverage.description}</p>
       <div className="mt-4 flex justify-between items-center">
         <span className="font-bold text-xl">Rs. {beverage.price}</span>
-        <button className="px-4 py-2 bg-blue-500 text-white rounded-md">
+        <button
+          className="px-4 py-2 bg-blue-500 text-white rounded-md"
+          onClick={handleAddToCart}
+        >
           Add to Cart
         </button>
       </div>

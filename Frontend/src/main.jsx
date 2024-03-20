@@ -8,6 +8,7 @@ import Signup from "./screens/signup.jsx";
 import Juices from "./screens/juices.jsx";
 import Snacks from "./screens/snacks.jsx";
 import Lunch from "./screens/lunch.jsx";
+import { CartProvider } from "./hooks/useCart.jsx";
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -30,6 +31,7 @@ const App = () => {
   }
 
   return (
+    <CartProvider>
     <Router>
       <Routes>
         <Route
@@ -56,6 +58,7 @@ const App = () => {
         <Route exact path="/signup" element={<Signup />}></Route>
       </Routes>
     </Router>
+    </CartProvider>
   );
 };
 
