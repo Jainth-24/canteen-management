@@ -11,7 +11,7 @@ const port = 3000;
 app.use(bodyParser.json());
 app.use(cors());
 
-mongoose.connect("mongodb://127.0.0.1:27017/canteen-token");
+mongoose.connect("mongodb+srv://jainthasokan185:O0S9kZgoBpnNuhmF@cluster0.axeo981.mongodb.net/canteen-token");
 
 const User = mongoose.model("User", {
   rollno: String,
